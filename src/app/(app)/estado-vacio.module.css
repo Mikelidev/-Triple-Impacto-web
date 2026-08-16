@@ -1,0 +1,28 @@
+.wrap {
+  max-width: 46ch;
+  padding: 60px 0;
+}
+
+.titulo {
+  margin-top: 12px;
+}
+
+.texto {
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--cuerpo);
+}
+
+.boton {
+  all: unset;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 22px;
+  background: var(--primario);
+  color: var(--fondo);
+  padding: 10px 18px;
+  border-radius: var(--radio-boton);
+  font-size: 14px;
+  font-weight: 500;
+}

@@ -1,0 +1,129 @@
+.phead {
+  margin-bottom: 22px;
+}
+.phead p {
+  margin: 9px 0 0;
+  max-width: 60ch;
+  color: var(--cuerpo);
+}
+
+.ctlwrap {
+  margin-bottom: 8px;
+}
+.ctl {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.pill {
+  border: 0.5px solid var(--superficie);
+  border-radius: 8px;
+  padding: 9px 12px;
+  background: #fafaf8;
+  font-size: 14px;
+  color: var(--cuerpo);
+  cursor: pointer;
+}
+.boton {
+  all: unset;
+  cursor: pointer;
+  background: var(--primario);
+  color: var(--fondo);
+  padding: 10px 18px;
+  border-radius: var(--radio-boton);
+  font-size: 14px;
+  font-weight: 500;
+}
+.boton:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.botonSecundario {
+  all: unset;
+  cursor: pointer;
+  background: transparent;
+  color: var(--cuerpo);
+  border: 0.5px solid var(--superficie);
+  padding: 9px 17px;
+  border-radius: var(--radio-boton);
+  font-size: 14px;
+  font-weight: 500;
+}
+.botonSecundario:hover {
+  background: var(--superficie);
+}
+.errorPdf {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--cuerpo);
+}
+
+.rep {
+  background: #fafaf8;
+  border: 0.5px solid var(--linea);
+  border-radius: var(--radio-tarjeta);
+  padding: 38px 40px;
+  margin-top: 22px;
+}
+.lead {
+  font-size: 16.5px;
+  line-height: 1.65;
+  max-width: 64ch;
+  margin: 16px 0 30px;
+}
+
+.subtitulo {
+  margin: 0 0 10px;
+  color: var(--tinta);
+}
+.subtitulo:not(:first-of-type) {
+  margin-top: 28px;
+}
+
+.tblwrap {
+  overflow-x: auto;
+  border: 0.5px solid var(--linea);
+  border-radius: var(--radio-tarjeta);
+  margin-bottom: 4px;
+}
+.tblwrap table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13.5px;
+  white-space: nowrap;
+}
+.tblwrap th {
+  background: var(--superficie);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--tinta);
+  text-align: right;
+  padding: 11px 14px;
+}
+.tblwrap th:first-child,
+.tblwrap td:first-child {
+  text-align: left;
+}
+.txt {
+  font-family: var(--font-sans);
+}
+.tblwrap td {
+  padding: 9px 14px;
+  border-top: 0.5px solid var(--linea);
+  text-align: right;
+  color: var(--cuerpo);
+}
+
+@media print {
+  .noprint {
+    display: none !important;
+  }
+  .rep {
+    border: 0;
+    padding: 0;
+    background: transparent;
+  }
+}

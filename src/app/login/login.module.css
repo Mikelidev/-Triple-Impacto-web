@@ -1,0 +1,80 @@
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 360px;
+  background: var(--superficie);
+  border: 0.5px solid var(--linea);
+  border-radius: var(--radio-tarjeta);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.titulo {
+  margin-top: 6px;
+}
+
+.lede {
+  font-size: 13.5px;
+  color: var(--cuerpo);
+  margin-bottom: 6px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13px;
+  color: var(--tinta);
+  font-weight: 500;
+}
+
+.campo input {
+  padding: 9px 12px;
+  border: 0.5px solid var(--linea);
+  border-radius: var(--radio-input);
+  background: #fafaf8;
+  font-size: 14px;
+  color: var(--cuerpo);
+}
+
+.error {
+  font-size: 13px;
+  color: var(--cuerpo);
+}
+
+.error::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--acento);
+  margin-right: 6px;
+}
+
+.boton {
+  all: unset;
+  cursor: pointer;
+  text-align: center;
+  background: var(--primario);
+  color: var(--fondo);
+  padding: 10px 18px;
+  border-radius: var(--radio-boton);
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+.boton:disabled {
+  opacity: 0.6;
+  cursor: default;
+}

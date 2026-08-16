@@ -1,0 +1,255 @@
+.phead {
+  margin-bottom: 30px;
+}
+.phead p {
+  margin: 9px 0 0;
+  max-width: 60ch;
+  color: var(--cuerpo);
+}
+
+.tblwrap {
+  overflow-x: auto;
+  border: 0.5px solid var(--linea);
+  border-radius: var(--radio-tarjeta);
+  background: #fafaf8;
+  margin-top: 16px;
+}
+.tblwrap table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13.5px;
+  white-space: nowrap;
+}
+.tblwrap th {
+  background: var(--superficie);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--tinta);
+  text-align: right;
+  padding: 12px 18px;
+}
+.tblwrap th:first-child,
+.tblwrap td:first-child {
+  text-align: left;
+  position: sticky;
+  left: 0;
+  background: var(--superficie);
+  z-index: 1;
+}
+.tblwrap td:first-child {
+  background: #fafaf8;
+}
+.tblwrap tr:hover td:first-child {
+  background: #f1f2ee;
+}
+.tblwrap td {
+  padding: 10px 18px;
+  border-top: 0.5px solid var(--linea);
+  text-align: right;
+  color: var(--cuerpo);
+}
+.tblwrap tr:hover td {
+  background: rgba(231, 232, 225, 0.45);
+}
+.tdNombre :global(.punto-alerta) {
+  margin-right: 6px;
+}
+.tdNombre a {
+  color: var(--tinta);
+  font-weight: 500;
+  text-decoration: none;
+}
+.tdNombre a:hover {
+  text-decoration: underline;
+}
+
+.thOrdenable {
+  cursor: pointer;
+  user-select: none;
+}
+.thOrdenable:hover {
+  color: var(--primario);
+}
+
+.tdIndicador {
+  text-align: left;
+  color: var(--tinta);
+  font-weight: 500;
+}
+.tdSeparador {
+  position: static !important;
+  text-align: left !important;
+  background: var(--superficie) !important;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tinta);
+  font-weight: 600;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+.chipToggle {
+  all: unset;
+  cursor: pointer;
+  font-size: 13.5px;
+  padding: 7px 14px;
+  border-radius: 20px;
+  border: 0.5px solid var(--superficie);
+  background: #fafaf8;
+  color: var(--cuerpo);
+}
+.chipToggle:hover {
+  border-color: var(--primario);
+}
+.chipToggle[aria-pressed='true'] {
+  background: var(--primario);
+  color: var(--fondo);
+  font-weight: 500;
+  border-color: var(--primario);
+}
+
+.ctl {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 9px;
+  margin-top: 16px;
+}
+.seg {
+  display: inline-flex;
+  border: 0.5px solid var(--superficie);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fafaf8;
+}
+.seg button {
+  all: unset;
+  cursor: pointer;
+  padding: 9px 16px;
+  font-size: 14px;
+  color: var(--cuerpo);
+  border-right: 0.5px solid var(--superficie);
+}
+.seg button:last-child {
+  border-right: 0;
+}
+.seg button:hover {
+  background: var(--superficie);
+}
+.seg button[aria-pressed='true'] {
+  background: var(--primario);
+  color: var(--fondo);
+  font-weight: 500;
+}
+.pill {
+  border: 0.5px solid var(--superficie);
+  border-radius: 8px;
+  padding: 9px 12px;
+  background: #fafaf8;
+  font-size: 14px;
+  color: var(--cuerpo);
+  cursor: pointer;
+}
+.note {
+  font-size: 13.5px;
+  color: rgba(62, 69, 61, 0.72);
+  margin: 0 0 24px;
+  max-width: 68ch;
+}
+
+.rank {
+  border-top: 0.5px solid var(--linea);
+}
+.rhead,
+.row {
+  display: grid;
+  grid-template-columns: 210px 1fr 84px 104px;
+  gap: 16px;
+  align-items: center;
+}
+.rhead {
+  padding: 10px 4px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tinta);
+  border-bottom: 0.5px solid var(--linea);
+}
+.rhead div:nth-child(3) {
+  text-align: right;
+}
+.rhead div:nth-child(4) {
+  text-align: center;
+}
+
+/* Muestra 5 filas y deja el resto con scroll interno, no en la página entera.
+   Cada fila mide ~51.6px de alto (padding 11px*2 + contenido); 5 filas = 258px. */
+.rankScroll {
+  max-height: 258px;
+  overflow-y: auto;
+}
+
+.row {
+  padding: 11px 4px;
+  border-bottom: 0.5px solid var(--linea);
+  cursor: pointer;
+}
+.row:hover {
+  background: rgba(231, 232, 225, 0.55);
+}
+.nm {
+  font-size: 14.5px;
+  color: var(--tinta);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.track {
+  height: 15px;
+  background: var(--superficie);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+.fill {
+  height: 100%;
+  border-radius: 6px;
+}
+.fill-favorable {
+  background: var(--primario);
+}
+.fill-desfavorable {
+  background: var(--cuerpo);
+}
+.fill-neutro {
+  background: rgba(62, 69, 61, 0.32);
+}
+.ref {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 1.5px;
+  background: var(--tinta);
+  opacity: 0.65;
+}
+.val {
+  text-align: right;
+  font-size: 14.5px;
+  color: var(--tinta);
+}
+
+@media (max-width: 700px) {
+  .rhead,
+  .row {
+    grid-template-columns: 130px 1fr 66px 84px;
+    gap: 9px;
+  }
+}

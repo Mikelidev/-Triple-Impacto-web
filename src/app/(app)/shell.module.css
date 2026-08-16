@@ -1,0 +1,243 @@
+.app {
+  display: grid;
+  grid-template-columns: 236px 1fr;
+  min-height: 100vh;
+}
+
+.aside {
+  background: var(--tinta);
+  color: var(--fondo);
+  padding: 28px 0 20px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.brand {
+  padding: 0 24px 30px;
+}
+
+.brandKicker {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 241, 0.58);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.brandName {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  line-height: 1.15;
+  color: var(--fondo);
+  letter-spacing: -0.01em;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav a {
+  padding: 11px 24px;
+  font-size: 14.5px;
+  color: rgba(245, 245, 241, 0.6);
+  border-left: 2px solid transparent;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: rgba(245, 245, 241, 0.9);
+}
+
+.nav a[aria-current='page'] {
+  color: var(--fondo);
+  border-left-color: var(--primario);
+  font-weight: 500;
+}
+
+.asidefoot {
+  margin-top: auto;
+  padding: 20px 24px 0;
+  border-top: 1px solid rgba(245, 245, 241, 0.14);
+}
+
+.salir {
+  all: unset;
+  cursor: pointer;
+  display: block;
+  font-size: 13px;
+  color: rgba(245, 245, 241, 0.55);
+}
+.salir:hover {
+  color: var(--fondo);
+}
+
+.main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  height: 66px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 34px;
+  border-bottom: 0.5px solid var(--superficie);
+  position: sticky;
+  top: 0;
+  background: var(--fondo);
+  z-index: 20;
+}
+
+.searchwrap {
+  position: relative;
+  width: 320px;
+  max-width: 100%;
+}
+
+.searchwrap input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 0.5px solid var(--superficie);
+  border-radius: var(--radio-input);
+  background: #fafaf8;
+  font-size: 14px;
+  color: var(--cuerpo);
+}
+
+.sugg {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  background: var(--fondo);
+  border: 0.5px solid var(--superficie);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 30;
+}
+
+.sugg button {
+  all: unset;
+  display: flex;
+  cursor: pointer;
+  padding: 9px 13px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.sugg button:hover {
+  background: var(--superficie);
+}
+
+.campanawrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+}
+
+.campanawrap label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(62, 69, 61, 0.6);
+  white-space: nowrap;
+}
+
+.campanawrap select {
+  border: 0.5px solid var(--superficie);
+  border-radius: var(--radio-input);
+  padding: 8px 10px;
+  font-size: 14px;
+  background: #fafaf8;
+  color: var(--cuerpo);
+  cursor: pointer;
+}
+
+.importar {
+  flex: none;
+  text-decoration: none;
+  background: var(--primario);
+  color: var(--fondo);
+  padding: 9px 16px;
+  border-radius: var(--radio-boton);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.importar:hover {
+  background: var(--tinta);
+}
+
+.page {
+  padding: 34px 34px 76px;
+  max-width: 1400px;
+}
+
+@media (max-width: 900px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+  .aside {
+    position: static;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 18px;
+  }
+  .brand {
+    padding: 0 14px 0 0;
+  }
+  .nav {
+    flex-direction: row;
+  }
+  .asidefoot {
+    margin: 0 0 0 auto;
+    padding: 0;
+    border: 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .page,
+  .topbar {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .topbar {
+    height: auto;
+    flex-wrap: wrap;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .searchwrap {
+    width: 100%;
+  }
+}
+
+@media print {
+  .aside,
+  .topbar {
+    display: none !important;
+  }
+  .app {
+    display: block;
+  }
+  .page {
+    padding: 0;
+    max-width: none;
+  }
+}
