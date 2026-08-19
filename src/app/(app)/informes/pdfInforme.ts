@@ -9,6 +9,16 @@ type DocConTabla = jsPDF & { lastAutoTable?: { finalY: number } };
 const MARGEN = 48;
 const ANCHO_TEXTO = 500;
 
+/**
+ * La fuente estándar del PDF (Helvetica/WinAnsi) no tiene glyph para ↑/↓: al toparse con
+ * uno, jsPDF cambia de codificación a mitad de línea y corrompe toda la celda. Estos
+ * caracteres solo existen en el texto que arma `formatearDiferencia` (columna Brecha),
+ * así que se sanean acá — nunca en `lib/formato.ts`, que también alimenta la pantalla.
+ */
+function sinFlechas(texto: string): string {
+  return texto.replace(/↑\s*/g, '+').replace(/↓\s*/g, '-');
+}
+
 const ESTILOS_TABLA = {
   styles: { fontSize: 9, textColor: [62, 69, 61] as [number, number, number], cellPadding: 7, lineColor: [225, 226, 219] as [number, number, number], lineWidth: 0.5 },
   headStyles: { fillColor: [231, 232, 225] as [number, number, number], textColor: [30, 43, 33] as [number, number, number], fontStyle: 'bold' as const },
@@ -49,7 +59,7 @@ export function dibujarInforme(doc: jsPDF, tabla: AutoTable, datos: DatosInforme
     startY: y + 8,
     margin: { left: MARGEN, right: MARGEN },
     head: [['Indicador', 'Valor', 'Objetivo', 'Brecha', 'Promedio del grupo']],
-    body: datos.filasCria.map((f) => [f.etiqueta, f.valor, f.objetivo, f.brecha, f.grupo]),
+    body: datos.filasCria.map((f) => [f.etiqueta, f.valor, f.objetivo, sinFlechas(f.brecha), f.grupo]),
     ...ESTILOS_TABLA,
   });
   y = (d.lastAutoTable?.finalY ?? y + 8) + 24;
@@ -61,7 +71,7 @@ export function dibujarInforme(doc: jsPDF, tabla: AutoTable, datos: DatosInforme
     startY: y + 8,
     margin: { left: MARGEN, right: MARGEN },
     head: [['Indicador', 'Valor', 'Objetivo', 'Brecha', 'Promedio del grupo']],
-    body: datos.filasRepo.map((f) => [f.etiqueta, f.valor, f.objetivo, f.brecha, f.grupo]),
+    body: datos.filasRepo.map((f) => [f.etiqueta, f.valor, f.objetivo, sinFlechas(f.brecha), f.grupo]),
     ...ESTILOS_TABLA,
   });
   y = (d.lastAutoTable?.finalY ?? y + 8) + 24;
